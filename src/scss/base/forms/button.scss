@@ -3,7 +3,10 @@
 
 .button {
 	display: inline-flex;
-	padding: 0px 0px;
+	font-weight: 300;
+	line-height: 156%;
+	padding: toRem(10) toRem(40);
+	border-radius: toRem(50);
 	@media (any-hover: hover) {
 		&:hover {
 		}
@@ -11,4 +14,9 @@
 	&--fw {
 		width: 100%;
 	}
+	&::before {
+		content: '';
+		background: url("@img/bg-button.jpg") center no-repeat;
+	}
+	
 }
