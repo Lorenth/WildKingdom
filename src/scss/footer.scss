@@ -43,7 +43,7 @@
 	// .footer__menu
 	&__menu {
 		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 40, 20);
+			@include adaptiveValue('margin-bottom', 40, 20);
 		}
 	}
 	// .footer__social
@@ -106,14 +106,14 @@
 	display: flex;
 	flex-wrap: wrap;
 	column-gap: toRem(3);
-	@include adaptiveValue("column-gap", 41, 15);
+	@include adaptiveValue('column-gap', 41, 15);
 
 	// .social__item
 	&__item {
 		font-size: toRem(24);
 		transition: color 0.3s;
-		@media (any-hover: hover){
-			&:hover{
+		@media (any-hover: hover) {
+			&:hover {
 				color: $goldColor;
 			}
 		}
