@@ -28,9 +28,10 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Список слайдерів
 	// Перевіряємо, чи є слайдер на сторінці
-	if (document.querySelector('.swiper')) { // Вказуємо склас потрібного слайдера
+	if (document.querySelector('.hero__slider')) { // Вказуємо склас потрібного слайдера
 		// Створюємо слайдер
-		new Swiper('.swiper', { // Вказуємо склас потрібного слайдера
+		new Swiper('.swiper', {
+			// Вказуємо склас потрібного слайдера
 			// Підключаємо модулі слайдера
 			// для конкретного випадку
 			modules: [Navigation],
@@ -40,6 +41,7 @@ function initSliders() {
 			spaceBetween: 0,
 			//autoHeight: true,
 			speed: 800,
+			// centeredSlides: true,
 
 			//touchRatio: 0,
 			//simulateTouch: false,
@@ -74,8 +76,8 @@ function initSliders() {
 
 			// Кнопки "вліво/вправо"
 			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
+				prevEl: '.hero__arrow--left',
+				nextEl: '.hero__arrow--right',
 			},
 			/*
 			// Брейкпоінти
@@ -101,8 +103,30 @@ function initSliders() {
 			*/
 			// Події
 			on: {
-
-			}
+				init: function (slider) {
+					slider.slides.forEach(slide => {
+						const imageSrc = slide.querySelector('.slide-hero__image').getAttribute('src')
+						const topImage = `
+							<div class="slide-hero__top-image">
+								<img src="${imageSrc}" alt="" />
+							</div>
+						`
+						slide.insertAdjacentHTML('beforeend', imageSrc)
+					})
+				}
+				// beforeSlideChangeStart: function(slider) {
+				// 	const activeSlide = document.querySelector('.hero__slider .swiper-slide-next')
+				// 	slider.slides.forEach(slide => {
+				// 		console.log(slide)
+				// 		slide.style.width = ``
+				// 	})
+				// 	activeSlide.style.width = `650px`
+				// 	console.log(slider.slides)
+				// },
+				// slideChangeTransitionEnd: function (slider) {
+				// 	slider.update()
+				// }
+			},
 		});
 	}
 }

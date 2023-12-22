@@ -5,7 +5,43 @@
 	<body>
 		<div class="wrapper">
 			@@include('html/_header.htm',{})
-			<main class="page"></main>
+			<main class="page">
+				<section class="hero">
+					<div class="hero__container">
+						<div class="hero__body">
+							<div class="hero__content">
+								<h1 class="hero__title">A better world for pets</h1>
+								<a href="#" class="hero_button button button--border"
+									><span>Explore</span></a
+								>
+							</div>
+						</div>
+						<div class="hero__slider swiper">
+							<div class="hero__wrapper swiper-wrapper">
+								<div class="hero__slide slide-hero swiper-slide">
+									<div class="slide-hero__body">
+										<img src="@img/01.png" class="slide-hero__image" alt="" />
+									</div>
+								</div>
+							</div>
+							<div class="hero__controll">
+								<div class="hero-arrow hero-arrow--left _icon-arrow"></div>
+								<div class="hero-arrow hero-arrow--right _icon-arrow"></div>
+							</div>
+						</div>
+						<div class="hero__mini-slider mini-slider swiper">
+							<div class="mini-slider__wrapper swiper-wrapper">
+								<div class="mini-slider__slide slide-hero swiper-slide">
+									<div class="slide-hero__body">
+										<img src="@img/01.png" class="mini-slider__image" alt="" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<img src="@img/BG.jpg" alt="Hero background" class="hero__bg" />
+				</section>
+			</main>
 			@@include('html/_footer.htm',{})
 		</div>
 		@@include('html/_js.htm',{})
