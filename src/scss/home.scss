@@ -10,20 +10,28 @@
 		display: grid;
 		align-items: center;
 		gap: toRem(30);
-		grid-template-columns: 1fr 44% 1fr;
-		padding-top: toRem(150);
+		grid-template-columns: 1fr 72%;
+		@include adaptiveValue('padding-top', 150, 80);
 		padding-bottom: toRem(50);
 		position: relative;
 		z-index: 2;
 		flex-grow: 1;
+		@media (max-width: em(1199.98)) {
+			grid-template-columns: auto;
+		}
 	}
 	&__body {
 	}
 	// .hero__content
 	&__content {
-		margin-right: -55%; /* 206/410 */
 		position: relative;
 		z-index: 3;
+		@media (min-width: em(1200)) {
+			margin-right: -55%; /* 206/410 */
+		}
+		@media (max-width: em(1199.98)) {
+			text-align: center;
+		}
 	}
 	// .hero__title
 	&__title {
@@ -40,9 +48,13 @@
 	}
 	// .hero__slider
 	&__slider.swiper {
+		position: relative;
 		padding-top: toRem(50);
 		padding-bottom: toRem(50);
 		z-index: 2;
+		@media (max-width: em(1199.98)) {
+			margin: toRem(0) toRem(-15);
+		}
 	}
 	// .hero__wrapper
 	&__wrapper {
@@ -58,6 +70,10 @@
 		right: toRem(15);
 		display: flex;
 		gap: toRem(30);
+		@media (max-width: em(1199.98)) {
+			justify-content: center;
+			width: 100%;
+		}
 	}
 
 	&__arrow {
@@ -80,15 +96,6 @@
 			}
 		}
 	}
-	&__mini-slider {
-	}
-
-	&__mini {
-		overflow: hidden;
-		padding-top: toRem(30);
-		padding-bottom: toRem(30);
-		transform: translate(0px, -30%);
-	}
 	// .hero__bg
 	&__bg {
 		position: absolute;
@@ -102,25 +109,18 @@
 	}
 }
 .slide-hero {
-	aspect-ratio: 1 / 1;
-	border: toRem(1) solid $bgGold;
-	@include adaptiveValue('padding', 24, 10);
-	border-radius: 50%;
-	flex: 1 1 auto;
-	position: relative;
-	&--mini {
-		flex: 0 0 auto;
-		padding: toRem(3);
-		width: toRem(117);
+	@include adaptiveValue('flex-basis', 742, 230);
+	&__content {
+		aspect-ratio: 1 / 1;
+		border: toRem(1) solid $bgGold;
+		@include adaptiveValue('padding', 24, 10);
+		border-radius: 50%;
+		flex: 1 1 auto;
+		position: relative;
 	}
 	// .slide-hero__body
 	&__body {
-		background: linear-gradient(
-			135deg,
-			rgba(20, 17, 10, 1) 0%,
-			rgba(33, 28, 22, 1) 12%,
-			rgba(20, 17, 10, 1) 100%
-		);
+		background: linear-gradient(135deg, rgba(20, 17, 10, 1) 0%, rgba(33, 28, 22, 1) 12%, rgba(20, 17, 10, 1) 100%);
 		border-radius: 50%;
 		aspect-ratio: 1 / 1;
 		overflow: hidden;
@@ -145,17 +145,81 @@
 	}
 }
 
-.mini-slider.swiper {
-	overflow: visible;
-	transform: translate(toRem(-130), 0);
-	width: toRem(117);
-	// .mini-slider__wrapper
-	&__wrapper {
+//====================================================================================================
+
+.about-us {
+	// .about-us__container
+	&__container {
+		@include adaptiveValue('padding-top', 190, 30);
+		@include adaptiveValue('padding-bottom', 80, 30);
 	}
-	// .mini-slider__slide
-	&__slide {
-		cursor: pointer;
+	&__body {
+		display: grid;
+		@include adaptiveValue('gap', 134, 15);
+		grid-template-columns: 51.25% 1fr;
+		align-items: center;
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 98, 20);
+		}
+	}
+	// .about-us__image
+	&__image {
+		img {
+			max-width: 100%;
+		}
+	}
+	// .about-us__content
+	&__content {
+	}
+	// .about-us__block-header
+	&__block-header {
 	}
 }
 
-//====================================================================================================
+.services-about-us {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: toRem(15);
+	max-width: toRem(1024);
+	margin: 0 auto;
+	text-align: center;
+	// .services-about-us__item
+	&__item {
+		display: grid;
+		align-items: center;
+		gap: toRem(29);
+	}
+	// .services-about-us__icon
+	&__icon {
+		border-radius: 50%;
+		overflow: hidden;
+		width: toRem(140);
+		height: toRem(140);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		justify-self: center;
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			transition: opacity 0.3s;
+			opacity: 0.5;
+			background: url('@img/bg-button.jpg') center no-repeat;
+		}
+		img {
+			position: relative;
+		}
+	}
+	// .services-about-us__label
+	&__label {
+		font-size: toRem(24);
+		text-transform: capitalize;
+		font-family: 'Italiana';
+	}
+}

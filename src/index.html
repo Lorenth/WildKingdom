@@ -11,36 +11,42 @@
 						<div class="hero__body">
 							<div class="hero__content">
 								<h1 class="hero__title">A better world for pets</h1>
-								<a href="#" class="hero_button button button--border"
-									><span>Explore</span></a
-								>
+								<a href="#" class="hero_button button button--border"><span>Explore</span></a>
 							</div>
 						</div>
 						<div class="hero__slider swiper">
 							<div class="hero__wrapper swiper-wrapper">
 								<div class="hero__slide slide-hero swiper-slide">
-									<div class="slide-hero__body">
-										<img src="@img/01.png" class="slide-hero__image" alt="Image" />
+									<div data-swiper-parallax-x="40%" data-swiper-parallax-scale="0.2" class="slide-hero__content">
+										<div class="slide-hero__body">
+											<img src="@img/01.png" class="slide-hero__image" alt="Image" />
+										</div>
 									</div>
 								</div>
 								<div class="hero__slide slide-hero swiper-slide">
-									<div class="slide-hero__body">
-										<img src="@img/01.png" class="slide-hero__image" alt="Image" />
+									<div data-swiper-parallax-x="40%" data-swiper-parallax-scale="0.2" class="slide-hero__content">
+										<div class="slide-hero__body">
+											<img src="@img/01.png" class="slide-hero__image" alt="Image" />
+										</div>
 									</div>
 								</div>
 								<div class="hero__slide slide-hero swiper-slide">
-									<div class="slide-hero__body">
-										<img src="@img/01.png" class="slide-hero__image" alt="Image" />
+									<div data-swiper-parallax-x="40%" data-swiper-parallax-scale="0.2" class="slide-hero__content">
+										<div class="slide-hero__body">
+											<img src="@img/01.png" class="slide-hero__image" alt="Image" />
+										</div>
 									</div>
 								</div>
 								<div class="hero__slide slide-hero swiper-slide">
-									<div class="slide-hero__body">
-										<img src="@img/01.png" class="slide-hero__image" alt="Image" />
+									<div data-swiper-parallax-x="40%" data-swiper-parallax-scale="0.2" class="slide-hero__content">
+										<div class="slide-hero__body">
+											<img src="@img/01.png" class="slide-hero__image" alt="Image" />
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="hero__mini">
+						<!-- <div class="hero__mini">
 							<div class="hero__mini-slider mini-slider swiper">
 								<div class="mini-slider__wrapper swiper-wrapper">
 									<div class="mini-slider__slide slide-hero slide-hero--mini swiper-slide">
@@ -65,13 +71,53 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<div class="hero__controll">
-							<button type="button" class="hero__arrow hero__arrow--left _icon-arrow"></button >
-							<button type="button" class="hero__arrow hero__arrow--right _icon-arrow"></button >
+							<button type="button" class="hero__arrow hero__arrow--left _icon-arrow"></button>
+							<button type="button" class="hero__arrow hero__arrow--right _icon-arrow"></button>
 						</div>
 					</div>
 					<img src="@img/BG.jpg" alt="Hero background" class="hero__bg" />
+				</section>
+				<section class="about-us">
+					<div class="about-us__container">
+						<div class="about-us__body">
+							<div class="about-us__image">
+								<img src="@img/About/image.jpg" alt="" />
+							</div>
+							<div class="about-us__content">
+								<div class="about-us__block-header block-header">
+									<div class="block-header__label">About us</div>
+									<div class="block-header__title">Treating pet like Royalty</div>
+									<div class="block-header__text">
+										<blockquote>“They’re not just pets, they’re family”</blockquote>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquam mi id augue ultrices, in tempus elit tristique. Aliquam ultrices sem non.</p>
+									</div>
+									<a href="#" class="block-header__button button"><span>Explore</span></a>
+								</div>
+							</div>
+						</div>
+						<div class="about-us__services services-about-us">
+							<div class="services-about-us__item">
+								<div class="services-about-us__icon">
+									<img src="@img/About/paw.svg" alt="Paw">
+								</div>
+								<div class="services-about-us__label">Pet food</div>
+							</div>
+							<div class="services-about-us__item">
+								<div class="services-about-us__icon">
+									<img src="@img/About/stick.svg" alt="Paw">
+								</div>
+								<div class="services-about-us__label">Pet care</div>
+							</div>
+							<div class="services-about-us__item">
+								<div class="services-about-us__icon">
+									<img src="@img/About/home.svg" alt="Paw">
+								</div>
+								<div class="services-about-us__label">Pet accessories</div>
+							</div>
+						</div>
+					</div>
 				</section>
 			</main>
 			@@include('html/_footer.htm',{})
