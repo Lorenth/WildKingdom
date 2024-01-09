@@ -6,6 +6,12 @@
 	display: grid;
 	gap: toRem(20);
 	justify-items: start;
+	&--center {
+		justify-items: start;
+	}
+	&--white {
+		color: #fff;
+	}
 	&__label {
 		line-height: 156.25%; /* 25/16 */
 		text-transform: capitalize;
@@ -22,7 +28,7 @@
 		text-transform: capitalize;
 		color: $goldColor;
 		font-family: 'Italiana';
-		font-size: toRem(48);
+		@include adaptiveValue("font-size", 48, 42);
 		line-height: 120%;
 	}
 	&__button {

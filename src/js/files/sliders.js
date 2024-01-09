@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Navigation, Controller, Parallax} from 'swiper/modules';
+import { Navigation, Controller, Parallax } from 'swiper/modules';
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
@@ -71,7 +71,7 @@ function initSliders() {
 			observer: true,
 			observeParents: true,
 			parallax: true,
-			slidesPerView: "auto",
+			slidesPerView: 'auto',
 			loop: true,
 			spaceBetween: 30,
 			speed: 800,
@@ -86,19 +86,17 @@ function initSliders() {
 				},
 				768: {
 					centeredSlides: true,
-					spaceBetween: 30
+					spaceBetween: 30,
 				},
 				1200: {
 					centeredSlides: false,
 					spaceBetween: 30,
-				}
+				},
 			},
 			on: {
 				init: function (slider) {
 					slider.slides.forEach(slide => {
-						const imageSrc = slide
-							.querySelector('.slide-hero__image')
-							.getAttribute('src');
+						const imageSrc = slide.querySelector('.slide-hero__image').getAttribute('src');
 						const topImage = `
 							<div class="slide-hero__top-image">
 								<img src="${imageSrc}" alt="" />
@@ -114,6 +112,25 @@ function initSliders() {
 		// mainSlider.controller.control = miniSlider;
 		// miniSlider.controller.control = mainSlider;
 	}
+	if (document.querySelector('.reviews__slider')) {
+		new Swiper('.reviews__slider', {
+			// Вказуємо склас потрібного слайдера
+			// Підключаємо модулі слайдера
+			// для конкретного випадку
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			loop: true,
+			autoHeight: true,
+			spaceBetween: 30,
+			speed: 800,
+			navigation: {
+				prevEl: '.reviews__arrow--prev',
+				nextEl: '.reviews__arrow--next',
+			}
+		});
+	}
 }
 
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
@@ -122,8 +139,7 @@ function initSlidersScroll() {
 	if (sliderScrollItems.length > 0) {
 		for (let index = 0; index < sliderScrollItems.length; index++) {
 			const sliderScrollItem = sliderScrollItems[index];
-			const sliderScrollBar =
-				sliderScrollItem.querySelector('.swiper-scrollbar');
+			const sliderScrollBar = sliderScrollItem.querySelector('.swiper-scrollbar');
 			const sliderScroll = new Swiper(sliderScrollItem, {
 				observer: true,
 				observeParents: true,
