@@ -32,6 +32,12 @@
 		&::before {
 			opacity: 0;
 		}
+		@media (any-hover: hover) {
+			&:hover {
+				border: 1px solid transparent;
+				
+			}
+		}
 	}
 	span {
 		position: relative;
@@ -40,7 +46,6 @@
 	@media (any-hover: hover) {
 		&:hover {
 			color: $mainColor;
-			border: 1px solid transparent;
 			&::before {
 				opacity: 1;
 			}
