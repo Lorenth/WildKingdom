@@ -113,6 +113,10 @@
 			color: #fff;
 			font-size: toRem(30);
 		}
+
+		&._navigator-active {
+			color: #ffd000;
+		}
 	}
 }
 

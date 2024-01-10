@@ -513,7 +513,7 @@
 .contacts {
 	position: relative;
 	@include adaptiveValue('padding-top', 57, 30);
-	@include adaptiveValue('padding-bottom', 70, 30);
+	@include adaptiveValue('padding-bottom', 70, 15);
 	&::before {
 		content: '';
 		position: absolute;
@@ -684,22 +684,26 @@
 //========================================================================================================================================================
 
 .reviews {
+	@include adaptiveValue('padding-top', 100, 15);
+	@include adaptiveValue('padding-bottom', 160, 30);
 	// .reviews__container
 	&__container {
 	}
 	// .reviews__slider
 	&__slider {
+		position: relative;
 	}
 	// .reviews__wrapper
 	&__wrapper {
 	}
 	// .reviews__slide
 	&__slide {
-		@include adaptiveValue('padding-left', 190, 50);
-		@include adaptiveValue('padding-right', 190, 50);
+		@include adaptiveValue('padding-left', 190, 50, 2, $containerWidth, 737.98);
+		@include adaptiveValue('padding-right', 190, 50, 2, $containerWidth, 737.98);
 		display: grid;
 		justify-items: center;
 		text-align: center;
+		@include adaptiveValue("gap", 50, 30);
 	}
 	// .reviews__icon
 	&__icon {
@@ -707,6 +711,9 @@
 		background-color: #fff;
 		border-radius: 50%;
 		display: flex;
+		width: toRem(140);
+		height: toRem(140);
+		overflow: hidden;
 		justify-content: center;
 		align-items: center;
 		&::before {
@@ -718,6 +725,7 @@
 			left: 0;
 			transition: opacity 0.3s;
 			opacity: 0.5;
+
 			background: url('@img/bg-button.jpg') center / cover no-repeat;
 		}
 		img {
@@ -731,20 +739,49 @@
 	}
 	// .reviews__text
 	&__text {
+		@include adaptiveValue("font-size", 30, 18);
+		line-height: 166.666667%; /* 50/30 */
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 50, 15);
+		}
+		p {
+			&:not(:last-child) {
+				margin-bottom: toRem(15);
+			}
+		}
 	}
 	// .reviews__author
 	&__author {
+		font-style: normal;
+		font-family: 'Italiana';
+		@include adaptiveValue('font-size', 48, 32);
+		color: $goldColor;
 	}
 	// .reviews__arrows
 	&__arrows {
 	}
 	// .reviews__arrow
 	&__arrow {
-	}
-	// .reviews__arrow--prev
-	&__arrow--prev {
-	}
-	// .reviews__arrow--next
-	&__arrow--next {
+		position: absolute;
+		z-index: 5;
+		color: $goldColor;
+		transition: color 0.3s;
+		@include adaptiveValue('font-size', 33, 28);
+		top: toRem(235);
+		&--prev {
+			left: 0;
+			transform: rotate(-180deg);
+		}
+		&--next {
+			right: 0;
+		}
+		@media (any-hover: hover){
+			&:hover{
+				color: $bgGold;
+			}
+		}
+		@media (max-width:$mobile){
+			 top: toRem(63); 
+		}
 	}
 }
